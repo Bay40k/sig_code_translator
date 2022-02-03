@@ -14,5 +14,7 @@ def main():
 
 
 if __name__ == "__main__":
+    print("Sig Code Translator")
+    print("(square brackets denote default option)")
     while True:
         main()

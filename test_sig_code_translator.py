@@ -28,21 +28,19 @@ class MyTestCase(unittest.TestCase):
     def test_to_sig(self):
         # test case and stripping
         self.assertEqual(
-            "as needed as needed for as needed for anxiety as needed for",
-            from_sig(" PRN PRF PRA PRF  "),
+            "AS NEEDED AS NEEDED FOR AS NEEDED FOR ANXIETY AS NEEDED FOR",
+            from_sig(" prn pRf Pra prf "),
         )
         for test in self.test_data:
-            self.assertEqual(test["input"], from_sig(test["output"]))
+            self.assertEqual(test["input"].upper(), from_sig(test["output"]))
 
     def test_from_sig(self):
         self.assertEqual(
-            "prn prf pra prf",
-            to_sig(
-                " AS NEEDED AS NEEDED FOR AS NEEDED FOR ANXIETY AS NEEDED FOR  "
-            ),
+            "PRN PRF PRA PRF",
+            to_sig(" as needed as neEdeD for as needed for anxiety as needed for  "),
         )
         for test in self.test_data:
-            self.assertEqual(test["output"], to_sig(test["input"]))
+            self.assertEqual(test["output"].upper(), to_sig(test["input"]))
 
 
 if __name__ == "__main__":

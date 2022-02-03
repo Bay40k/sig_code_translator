@@ -17,13 +17,15 @@ python -m sig_code_translator
 
 ###### Example output:
 ```text
+Sig Code Translator
+(square brackets denote default option)
 1. [To English], 2. To Sig: 
 Enter pharmacy sig: tk 2 t d prn
-take 2 tablet daily as needed
+TAKE 2 TABLET DAILY AS NEEDED
 
 1. [To English], 2. To Sig: 2
 Enter instructions: take 1 capsule daily as needed for pain
-tk 1 c d prf p
+TK 1 C D PRF P
 ```
 
 ### Embedding:
@@ -33,8 +35,8 @@ import sig_code_translator
 
 # Inputs are case insensitive
 print(sig_code_translator.from_sig("tk 2 t d prn"))
-# Output: take 2 tablet daily as needed
+# Output: TAKE 2 TABLET DAILY AS NEEDED
 
 print(sig_code_translator.to_sig("take 1 capsule daily as needed for pain"))
-# Output: tk 1 c d prf p
+# Output: TK 1 C D PRF P
 ```

@@ -10,7 +10,7 @@ def to_sig(input_string: str) -> str:
         value = translation_dict[key]
         if value in output_string:
             output_string = output_string.replace(value, key)
-    return output_string
+    return output_string.upper()
 
 
 def from_sig(input_string: str) -> str:
@@ -22,4 +22,4 @@ def from_sig(input_string: str) -> str:
         else:
             output_list.append(word)
     output_string = " ".join(output_list)
-    return output_string
+    return output_string.upper()
