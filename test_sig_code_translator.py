@@ -1,6 +1,6 @@
 import unittest
-from sig_code_translator import convert_to_english_from_sig
-from sig_code_translator import convert_to_sig_from_english
+from sig_code_translator import from_sig
+from sig_code_translator import to_sig
 
 
 class MyTestCase(unittest.TestCase):
@@ -25,24 +25,24 @@ class MyTestCase(unittest.TestCase):
         ]
         super().__init__(*args, **kwargs)
 
-    def test_convert_to_english_from_sig(self):
+    def test_to_sig(self):
         # test case and stripping
         self.assertEqual(
             "as needed as needed for as needed for anxiety as needed for",
-            convert_to_english_from_sig(" PRN PRF PRA PRF  "),
+            from_sig(" PRN PRF PRA PRF  "),
         )
         for test in self.test_data:
-            self.assertEqual(test["input"], convert_to_english_from_sig(test["output"]))
+            self.assertEqual(test["input"], from_sig(test["output"]))
 
-    def test_convert_to_sig_from_english(self):
+    def test_from_sig(self):
         self.assertEqual(
             "prn prf pra prf",
-            convert_to_sig_from_english(
+            to_sig(
                 " AS NEEDED AS NEEDED FOR AS NEEDED FOR ANXIETY AS NEEDED FOR  "
             ),
         )
         for test in self.test_data:
-            self.assertEqual(test["output"], convert_to_sig_from_english(test["input"]))
+            self.assertEqual(test["output"], to_sig(test["input"]))
 
 
 if __name__ == "__main__":

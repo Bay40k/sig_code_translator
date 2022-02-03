@@ -27,13 +27,14 @@ tk 1 c d prf p
 ```
 
 ### Embedding:
+
 ```python
 import sig_code_translator
 
 # Inputs are case insensitive
-print(sig_code_translator.convert_to_english_from_sig("tk 2 t d prn"))
+print(sig_code_translator.from_sig("tk 2 t d prn"))
 # Output: take 2 tablet daily as needed
 
-print(sig_code_translator.convert_to_sig_from_english("take 1 capsule daily as needed for pain"))
+print(sig_code_translator.to_sig("take 1 capsule daily as needed for pain"))
 # Output: tk 1 c d prf p
 ```

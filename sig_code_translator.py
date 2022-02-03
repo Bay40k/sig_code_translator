@@ -1,7 +1,7 @@
 from .sig_codes import translation_dict
 
 
-def convert_to_sig_from_english(input_string: str) -> str:
+def to_sig(input_string: str) -> str:
     output_string = input_string.lower().strip()
     # sort dict by value length, descending
     for key in sorted(
@@ -13,7 +13,7 @@ def convert_to_sig_from_english(input_string: str) -> str:
     return output_string
 
 
-def convert_to_english_from_sig(input_string: str) -> str:
+def from_sig(input_string: str) -> str:
     input_list = input_string.lower().strip().split(" ")
     output_list = []
     for word in input_list:
