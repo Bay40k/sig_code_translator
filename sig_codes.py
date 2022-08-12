@@ -106,5 +106,5 @@ translation_dict = {
     "w/": "with",
     "w/o": "without",
     "wk": "week",
-    # "prf": "as needed for",
+    "prf": "as needed for",
 }
